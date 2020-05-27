@@ -26,7 +26,7 @@ class Bot(SingleServerIRCBot): #inherits from singleserverIRCbot so it has all t
         print(70*"#")
         #print(resp)
         print(70*"#")
-        self.channel_id = resp["users"][0]["_id"] #output: 'users': [{'display_name': 'TaZR2', '_id': '69281381', ....
+        self.channel_id = resp["users"][0]["_id"] #output: 'users': [{'display_name': 'T', '_id': 
         #print(self.channel_id)
         print(70*"#")
         #print([(self.HOST, self.PORT, f"oauth:{self.TOKEN}")]) #need to send OAuth keys with "oauth:key"
@@ -45,17 +45,10 @@ class Bot(SingleServerIRCBot): #inherits from singleserverIRCbot so it has all t
     def on_pubmsg(self, cxn, event):
         global twitchString
         print(f"\n\n\n\n #######{event.tags}###### \n\n\n\n\n")
-        ''' [{'key': 'badge-info', 'value': None}, {'key': 'badges', 'value': 'broadcaster/1'}, {'key': 'color', 'value': None}, 
-        {'key': 'display-name', 'value': 'geekygamer1134'}, {'key': 'emotes', 'value': None}, {'key': 'flags', 'value': None}, 
-        {'key': 'id', 'value': 'c427f8a6-d014-4211-bfb2-0c8ef77fb1e9'}, {'key': 'mod', 'value': '0'}, {'key': 'room-id', 'value': '501482905'}, 
-        {'key': 'subscriber', 'value': '0'}, {'key': 'tmi-sent-ts', 'value': '1587690735306'}, 
-        {'key': 'turbo', 'value': '0'}, {'key': 'user-id', 'value': '501482905'}, {'key': 'user-type', 'value': None}] '''
+
 
         tags = {kvpair["key"]: kvpair["value"] for kvpair in event.tags} #Creates a tag dict containing keys and vals
-        print(f"\n\n\n\n these are the event tags: \n\n {tags} \n\n\n\n")
-        '''{'badge-info': None, 'badges': 'broadcaster/1', 'color': None, 'display-name': 'geekygamer1134',
-         'emotes': None, 'flags': None, 'id': 'd6b6219f-aae0-4e2d-a486-cb7a068bdf0a', 'mod': '0', 'room-id': '501482905',
-         'subscriber': '0', 'tmi-sent-ts': '1587692274522', 'turbo': '0', 'user-id': '501482905', 'user-type': None} '''
+'
 
         twitchString = event.arguments[0] #returns ['messageSentInTwitchChat']
         #if tags["display-name"] != OWNER:
@@ -71,7 +64,7 @@ class Bot(SingleServerIRCBot): #inherits from singleserverIRCbot so it has all t
 
 
 if __name__ == "__main__":
-    """bot2 = SingleServerIRCBot([("irc.chat.twitch.tv", 6667, f"oauth:7x6kyurubli3ald0tm5gve9xfiuyac")], "tazr2", "tazr2")
+    """bot2 = SingleServerIRCBot([("irc.chat.twitch.tv", 6667, f"oauth:")], "", "")
     print(dir(bot2))
     print(help(bot2.connect))
     bot2.start()"""
