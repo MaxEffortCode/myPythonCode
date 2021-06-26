@@ -2,7 +2,6 @@ import pyautogui
 import time
 import speech_recognition as sr
 import os
-import 
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
 
@@ -26,7 +25,7 @@ def test():
 
 #TODO MAKE SETNIFMENTAL ANALISIS ON WORDS
 #OR MAYBE JUST CRAWN THROUGH GUINUSS TO DOWNLOAD LRYICS OF SONG
-'''def silence_based_conversion(path): 
+def silence_based_conversion(path): 
 
 	song = AudioSegment.from_wav(path)
 	fh = open("reconized.txt", "w+")
@@ -75,19 +74,19 @@ def test():
 
 		i += 1
 
-	os.chdir('..')'''
+	os.chdir('..')
 
 if __name__ == '__main__': 
 
 	for x in range(0,100):
 		test()
 		time.sleep(.5)
-'''	print('Enter the audio file path') 
+	print('Enter the audio file path') 
 
 	path = input()
 
 	silence_based_conversion(path) 
-'''
+
 
   			
 
